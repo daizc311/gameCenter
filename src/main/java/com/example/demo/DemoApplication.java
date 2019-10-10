@@ -1,7 +1,7 @@
 package com.example.demo;
 
 import com.example.demo.async.CachePool;
-import com.example.demo.ffmpeg.FFmpegPublish;
+import com.example.demo.ffmpeg.FFmpegPublisher;
 import org.springframework.beans.factory.config.ConfigurableBeanFactory;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
@@ -50,8 +50,8 @@ public class DemoApplication {
     @Bean(name = "ffmpegPulish")
     @Lazy
     @Scope(ConfigurableBeanFactory.SCOPE_PROTOTYPE)
-    public FFmpegPublish ffmpegPulish() {
+    public FFmpegPublisher fFmpegPublisher() {
 
-        return new FFmpegPublish();
+        return new FFmpegPublisher();
     }
 }
