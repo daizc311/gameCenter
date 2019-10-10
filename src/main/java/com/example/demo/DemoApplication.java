@@ -2,20 +2,14 @@ package com.example.demo;
 
 import com.example.demo.async.CachePool;
 import com.example.demo.ffmpeg.FFmpegPublish;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.config.ConfigurableBeanFactory;
-import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Lazy;
 import org.springframework.context.annotation.Scope;
 import org.springframework.core.task.AsyncTaskExecutor;
-import org.springframework.data.redis.core.RedisTemplate;
-import org.springframework.data.redis.serializer.GenericJackson2JsonRedisSerializer;
-import org.springframework.data.redis.serializer.StringRedisSerializer;
 import org.springframework.scheduling.annotation.EnableAsync;
 import org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor;
-import org.springframework.web.context.WebApplicationContext;
 
 import java.util.concurrent.ConcurrentHashMap;
 
@@ -23,21 +17,7 @@ import java.util.concurrent.ConcurrentHashMap;
 @EnableAsync
 public class DemoApplication {
 
-    @Autowired
-    RedisTemplate redisTemplate;
 
-    public static void main(String[] args) {
-        SpringApplication.run(DemoApplication.class, args);
-    }
-
-    @Bean
-    public RedisTemplate redisTemplateInit() {
-        //设置序列化Key的实例化对象
-        redisTemplate.setKeySerializer(new StringRedisSerializer());
-        //设置序列化Value的实例化对象
-        redisTemplate.setValueSerializer(new GenericJackson2JsonRedisSerializer());
-        return redisTemplate;
-    }
 
     public static final String CACHE_NAME = "test";
 

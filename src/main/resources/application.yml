@@ -1,14 +1,8 @@
 
 spring:
-  redis:
-    # REDIS_URL
-    url: redis://localhost:testpassword123@localhost:6379
-    # 如果有密码
-    password: testpassword123
-    # 存储到分区1
-    database: 1
-    # 默认超时2000
-    timeout: 3000
+
+  application:
+    name: demo-main
 
 server:
   port: 88
