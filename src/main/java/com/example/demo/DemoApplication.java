@@ -1,12 +1,9 @@
 package com.example.demo;
 
 import com.example.demo.async.CachePool;
-import com.example.demo.ffmpeg.FFmpegPublisher;
-import org.springframework.beans.factory.config.ConfigurableBeanFactory;
+import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Lazy;
-import org.springframework.context.annotation.Scope;
 import org.springframework.core.task.AsyncTaskExecutor;
 import org.springframework.scheduling.annotation.EnableAsync;
 import org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor;
@@ -18,6 +15,9 @@ import java.util.concurrent.ConcurrentHashMap;
 public class DemoApplication {
 
 
+    public static void main(String[] args) {
+        SpringApplication.run(DemoApplication.class, args);
+    }
 
     public static final String CACHE_NAME = "test";
 
@@ -34,24 +34,14 @@ public class DemoApplication {
         return cachePool;
     }
 
-    @Bean
+    @Bean("ffmpegTheadPool")
     public AsyncTaskExecutor taskExecutor() {
         ThreadPoolTaskExecutor executor = new ThreadPoolTaskExecutor();
         executor.setCorePoolSize(100);
         executor.setMaxPoolSize(1000);
-
-//        ThreadPoolTaskExecutor executor2 = new ThreadPoolTaskExecutor();
-//        executor2.set
-
+        executor.setThreadNamePrefix("ffmpeg-");
 
         return executor;
     }
 
-    @Bean(name = "ffmpegPulish")
-    @Lazy
-    @Scope(ConfigurableBeanFactory.SCOPE_PROTOTYPE)
-    public FFmpegPublisher fFmpegPublisher() {
-
-        return new FFmpegPublisher();
-    }
 }
