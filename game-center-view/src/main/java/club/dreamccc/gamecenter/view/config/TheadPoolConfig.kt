@@ -1,4 +1,4 @@
-package club.dreamccc.gamecenter.config
+package club.dreamccc.gamecenter.view.config
 
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration
