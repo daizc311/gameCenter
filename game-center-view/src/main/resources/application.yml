@@ -2,7 +2,7 @@
 spring:
 
   application:
-    name: demo-main
+    name: Game-Center
 
 server:
   port: 7077

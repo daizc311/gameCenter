@@ -16,15 +16,12 @@ public class GameCenterApplication {
         SpringApplication.run(GameCenterApplication.class, args);
     }
 
-    public static final String CACHE_NAME = "test";
-
-
-    @Bean("ffmpegTheadPool")
+    @Bean("taskTheadPool")
     public AsyncTaskExecutor taskExecutor() {
         ThreadPoolTaskExecutor executor = new ThreadPoolTaskExecutor();
-        executor.setCorePoolSize(100);
-        executor.setMaxPoolSize(1000);
-        executor.setThreadNamePrefix("ffmpeg-");
+        executor.setCorePoolSize(10);
+        executor.setMaxPoolSize(100);
+        executor.setThreadNamePrefix("task-");
 
         return executor;
     }
