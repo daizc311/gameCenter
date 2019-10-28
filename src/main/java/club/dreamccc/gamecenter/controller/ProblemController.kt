@@ -1,14 +1,12 @@
-package com.example.demo.controller
+package club.dreamccc.gamecenter.controller
 
 import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RestController
 
 @RestController
 @RequestMapping("/user")
-class KtController {
+class ProblemController {
 
-
-    private val URL_PRE = "123";
 
     @RequestMapping("/test")
     fun test(username: String?, password: String?): Any {

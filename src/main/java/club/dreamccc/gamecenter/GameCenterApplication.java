@@ -1,4 +1,4 @@
-package com.example.demo;
+package club.dreamccc.gamecenter;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -9,11 +9,11 @@ import org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor;
 
 @SpringBootApplication
 @EnableAsync
-public class DemoApplication {
+public class GameCenterApplication {
 
 
     public static void main(String[] args) {
-        SpringApplication.run(DemoApplication.class, args);
+        SpringApplication.run(GameCenterApplication.class, args);
     }
 
     public static final String CACHE_NAME = "test";
