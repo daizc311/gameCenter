@@ -9,12 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>game-center-service</artifactId>
+    <artifactId>game-center-model</artifactId>
 
-    <dependencies>
-        <dependency>
-            <groupId>club.dreamccc</groupId>
-            <artifactId>game-center-persistence</artifactId>
-        </dependency>
-    </dependencies>
+
 </project>

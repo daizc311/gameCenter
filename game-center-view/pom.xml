@@ -11,6 +11,12 @@
 
     <artifactId>game-center-view</artifactId>
 
+    <dependencies>
+        <dependency>
+            <groupId>club.dreamccc</groupId>
+            <artifactId>game-center-service</artifactId>
+        </dependency>
+    </dependencies>
 
     <build>
         <plugins>
