@@ -13,7 +13,7 @@ class GameTask {
 
     var status: Double = 0.0
 
-    var itemList: List<GameTaskItem> = ArrayList()
+    var itemList: List<GameTaskItem> = emptyList()
 
 
 
