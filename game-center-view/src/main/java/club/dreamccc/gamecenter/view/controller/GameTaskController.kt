@@ -1,7 +1,7 @@
 package club.dreamccc.gamecenter.view.controller
 
 import club.dreamccc.gamecenter.model.GameTask
-import club.dreamccc.gamecenter.view.service.GameTaskService
+import club.dreamccc.gamecenter.service.GameTaskService
 import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RestController
 
@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RestController
 class GameTaskController(var gameTaskService: GameTaskService) {
 
 
-    @RequestMapping("/list")
+    @RequestMapping("/test")
     fun test(playerId: String?): List<GameTask>? {
 
 

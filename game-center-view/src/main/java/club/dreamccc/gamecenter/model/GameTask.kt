@@ -1,7 +1,7 @@
 package club.dreamccc.gamecenter.model
 
+class GameTask(){
 
-class GameTask {
 
     var taskId: String? = null
 
@@ -15,10 +15,8 @@ class GameTask {
 
     var itemList: List<GameTaskItem> = emptyList()
 
-
-
 }
 
-data class GameTaskItem(var taskItemId: String, var taskItemName: String) {
+class GameTaskItem(){
 
 }

@@ -1,7 +1,8 @@
-package club.dreamccc.gamecenter.view.service
+package club.dreamccc.gamecenter.service
 
 import club.dreamccc.gamecenter.model.GameTask
 import org.springframework.stereotype.Service
+
 @Service
 class GameTaskService {
 
